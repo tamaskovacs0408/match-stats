@@ -88,12 +88,13 @@ async function loadMatches(
 // Csak kompetíciók cache-t használunk statikusan
 let cachedCompetitions: Competition[] = [];
 
+// Define props type for the page
+type HomePageProps = {
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
 // Server Component
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Record<string, string | string[] | undefined>;
-}) {
+export default async function Home({ searchParams }: HomePageProps) {
   // URL paraméterek feldolgozása - átnevezzük, hogy ne használja közvetlenül a searchParams-t
   const urlParams = Object.fromEntries(
     Object.entries(searchParams || {}).map(([key, value]) => [
