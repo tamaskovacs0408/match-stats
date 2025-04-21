@@ -1,0 +1,56 @@
+.dateSelector {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .dateGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    
+    label {
+      font-weight: 500;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    
+    .dateInput {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      
+      @media (max-width: 480px) {
+        width: 100%;
+      }
+      
+      &:focus {
+        outline: none;
+        border-color: #0369a1;
+        box-shadow: 0 0 0 2px rgba(3, 105, 161, 0.2);
+      }
+    }
+  }
+}

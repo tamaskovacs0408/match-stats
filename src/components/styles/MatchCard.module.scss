@@ -1,0 +1,292 @@
+.matchCard {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .competition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .date {
+    font-size: 0.85rem;
+    color: #777;
+  }
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    
+    span {
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      max-width: 140px;
+    }
+  }
+  
+  .versus {
+    flex: 0;
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0 12px;
+  }
+}
+
+.prediction {
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+  
+  .predictionHeader {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .predictionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    
+    .predictionLabel {
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    .predictionValues {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+  
+  .predictionDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    
+    .homePredict, .awayPredict, .drawPredict {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      border-radius: 6px;
+      width: 30%;
+      color: white;
+    }
+    
+    .homePredict {
+      background-color: #4191ff;
+    }
+    
+    .awayPredict {
+      background-color: #ff6347;
+    }
+    
+    .drawPredict {
+      background-color: #808080;
+    }
+    
+    .teamName, .drawText {
+      font-size: 12px;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    
+    .percent {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    
+    .avgGoals {
+      font-size: 11px;
+      color: white;
+    }
+  }
+  
+  .totalGoals {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .chances {
+    display: flex;
+    height: 26px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 12px 0 4px 0;
+    
+    .chanceItem {
+      position: relative;
+      min-width: 30px;
+      
+      .chanceLabel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+      
+      .chanceBar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  
+  .chanceLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #777;
+  gap: 10px;
+  
+  .score {
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+/* Reszponzív igazítások */
+@media (max-width: 480px) {
+  .matchCard {
+    padding: 12px;
+  }
+  
+  .teams {
+    .team {
+      span {
+        font-size: 0.85rem;
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+/* Sötét mód támogatás */
+@media (prefers-color-scheme: dark) {
+  .matchCard {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+  }
+  
+  .header {
+    .competition {
+      color: #ccc;
+    }
+    
+    .date {
+      color: #aaa;
+    }
+  }
+  
+  .teams {
+    .team {
+      span {
+        color: #eee;
+      }
+    }
+    
+    .versus {
+      color: #777;
+    }
+  }
+  
+  .prediction {
+    border-top-color: #333;
+    
+    .predictionHeader {
+      color: #ddd;
+    }
+    
+    .predictionRow {
+      .predictionLabel {
+        color: #aaa;
+      }
+      
+      .predictionValues {
+        color: #eee;
+      }
+    }
+    
+    .totalGoals {
+      background-color: #444;
+    }
+    
+    .chanceLabels {
+      color: #999;
+    }
+  }
+}
