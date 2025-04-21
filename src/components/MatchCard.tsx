@@ -11,6 +11,7 @@ interface MatchCardProps {
   lazyLoad?: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function MatchCard({ match, lazyLoad = false }: MatchCardProps) {
   const homeId = match.homeTeam.id;
   const awayId = match.awayTeam.id;
