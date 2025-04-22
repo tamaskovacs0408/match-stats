@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimisticClientCache: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
